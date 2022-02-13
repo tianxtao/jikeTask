@@ -1,0 +1,76 @@
+{
+  "groups": [
+    {
+      "name": "klass",
+      "type": "com.txt.KlassProperties",
+      "sourceType": "com.txt.KlassProperties"
+    },
+    {
+      "name": "school",
+      "type": "com.txt.SchoolProperties",
+      "sourceType": "com.txt.SchoolProperties"
+    },
+    {
+      "name": "student",
+      "type": "com.txt.StudentProperties",
+      "sourceType": "com.txt.StudentProperties"
+    }
+  ],
+  "properties": [
+    {
+      "name": "klass.name1",
+      "type": "java.lang.String",
+      "sourceType": "com.txt.KlassProperties",
+      "defaultValue": "一班"
+    },
+    {
+      "name": "klass.name2",
+      "type": "java.lang.String",
+      "sourceType": "com.txt.KlassProperties",
+      "defaultValue": "二班"
+    },
+    {
+      "name": "school.name",
+      "type": "java.lang.String",
+      "sourceType": "com.txt.SchoolProperties",
+      "defaultValue": "西安皇家学院"
+    },
+    {
+      "name": "student.id1",
+      "type": "java.lang.Integer",
+      "sourceType": "com.txt.StudentProperties",
+      "defaultValue": 1101
+    },
+    {
+      "name": "student.id2",
+      "type": "java.lang.Integer",
+      "sourceType": "com.txt.StudentProperties",
+      "defaultValue": 1102
+    },
+    {
+      "name": "student.id3",
+      "type": "java.lang.Integer",
+      "sourceType": "com.txt.StudentProperties",
+      "defaultValue": 1103
+    },
+    {
+      "name": "student.name1",
+      "type": "java.lang.String",
+      "sourceType": "com.txt.StudentProperties",
+      "defaultValue": "小明"
+    },
+    {
+      "name": "student.name2",
+      "type": "java.lang.String",
+      "sourceType": "com.txt.StudentProperties",
+      "defaultValue": "小红"
+    },
+    {
+      "name": "student.name3",
+      "type": "java.lang.String",
+      "sourceType": "com.txt.StudentProperties",
+      "defaultValue": "小花"
+    }
+  ],
+  "hints": []
+}

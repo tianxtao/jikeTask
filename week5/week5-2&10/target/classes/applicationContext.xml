@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                        http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+                        http://www.springframework.org/schema/context
+                        http://www.springframework.org/schema/context/spring-context-3.2.xsd http://www.springframework.org/schema/aop https://www.springframework.org/schema/aop/spring-aop.xsd">
+    <bean id="class1" class="com.txt.homework2.Klass">
+        <property name="name" value="三年一班"></property>
+    </bean>
+    <bean id="class2" class="com.txt.homework2.Klass">
+        <property name="name" value="三年二班"></property>
+    </bean>
+    <bean id="student1-1" class="com.txt.homework2.Student">
+        <property name="sn" value="1101"/>
+        <property name="name" value="周杰伦"></property>
+        <property name="klass">
+            <ref bean="class2"></ref>
+        </property>
+    </bean>
+    <bean id="student1-2" class="com.txt.homework2.Student">
+        <property name="sn" value="1102"/>
+        <property name="name" value="陈冠希"></property>
+        <property name="klass">
+            <ref bean="class1"></ref>
+        </property>
+    </bean>
+    <bean id="student1-3" class="com.txt.homework2.Student">
+        <property name="sn" value="1103"/>
+        <property name="name" value="余文乐"></property>
+        <property name="klass">
+            <ref bean="class2"></ref>
+        </property>
+    </bean>
+    <bean id="student1-4" class="com.txt.homework2.Student">
+        <property name="sn" value="1104"/>
+        <property name="name" value="陈小春"></property>
+        <property name="klass">
+            <ref bean="class2"></ref>
+        </property>
+    </bean>
+    <bean id="student1-5" class="com.txt.homework2.Student">
+        <property name="sn" value="1105"/>
+        <property name="name" value="黄秋生"></property>
+        <property name="klass">
+            <ref bean="class1"></ref>
+        </property>
+    </bean>
+    <bean id="klass1-1" class="com.txt.homework2.Klass">
+        <property name="name" value="三年一班"></property>
+        <property name="students">
+            <list>
+                <ref bean="student1-2"></ref>
+                <ref bean="student1-5"></ref>
+            </list>
+        </property>
+    </bean>
+    <bean id="klass1-2" class="com.txt.homework2.Klass">
+        <property name="name" value="三年二班"></property>
+        <property name="students">
+            <list>
+                <ref bean="student1-1"></ref>
+                <ref bean="student1-3"></ref>
+                <ref bean="student1-4"></ref>
+            </list>
+        </property>
+    </bean>
+    <bean id="school1-1" class="com.txt.homework2.School">
+        <property name="name" value="西安皇家草滩学院"></property>
+        <property name="klasss">
+            <list>
+                <ref bean="klass1-1"></ref>
+                <ref bean="klass1-2"></ref>
+            </list>
+        </property>
+        <property name="student">
+            <ref bean="student1-1"></ref>
+        </property>
+    </bean>
+    <context:component-scan base-package="com.txt.homework2"/>
+
+    <bean id="dataSource" class="com.zaxxer.hikari.HikariDataSource"
+          destroy-method="close">
+        <property name="driverClassName" value="com.mysql.jdbc.Driver"></property>
+        <property name="jdbcUrl" value="jdbc:mysql://192.168.1.4/test?useSSL=false"></property>
+        <property name="username" value="root"></property>
+        <property name="password" value="root"></property>
+        <property name="readOnly" value="false" />
+        <property name="connectionTimeout" value="30000" />
+        <property name="idleTimeout" value="600000" />
+        <property name="maxLifetime" value="1800000" />
+        <property name="maximumPoolSize" value="10" />
+    </bean>
+</beans>
